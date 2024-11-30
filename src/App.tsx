@@ -161,6 +161,7 @@ function App() {
   return (
     <>
       <div className="main">
+      <SwipeableViews>
         <button className="btn-reset" onClick={reset}>
           Нова поредица
         </button>
@@ -200,6 +201,7 @@ function App() {
               );
           }
         })}
+        </SwipeableViews>
       </div>
     </>
   );

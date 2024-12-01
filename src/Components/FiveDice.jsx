@@ -90,7 +90,7 @@ export const FiveDice = () => {
   return (
     <div className="two-dice-view">
       <button className="btn-reset margin-bottom" onClick={getRoll}>
-        Хвърли
+        Хвърли Зарове
       </button>
       {roll.times ? rollDices() : ""}
       <h2 className="flex-items">Пъти хвърлени: {roll.times}</h2>

@@ -7,11 +7,10 @@
   flex-direction: column;
   overflow: auto;
   white-space: nowrap;
+}
 
-  /* justify-content: center;
-  align-items: center;
-  text-align: center; */
-  /* padding: 2rem; */
+.btn-reset {
+  width: 100%;
 }
 
 .navButton {
@@ -19,6 +18,13 @@
   position: absolute;
   right: 0;
   height: 100%;
+  width: 20%;
+}
+.navButtonLeft {
+  background-color: transparent;
+  position: absolute;
+  height: 100%;
+  width: 20%;
 }
 
 .container {

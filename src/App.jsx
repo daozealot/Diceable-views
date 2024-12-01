@@ -6,7 +6,7 @@ import { TwoDice } from "./Components/TwoDice.jsx";
 import { FiveDice } from "./Components/FiveDice.jsx";
 
 const views = ["table", "twoDice", "fiveDice"];
-//okgo
+
 function App() {
   const [view, setView] = useState(views[0]);
   const [table, setTable] = useState(null);

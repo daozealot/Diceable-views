@@ -1,9 +1,9 @@
 import { useState } from "react";
 import "./App.css";
-import { Table } from "./Components/Table.tsx";
-import { NavButton } from "./Components/NavButton.tsx";
-import { TwoDice } from "./Components/TwoDice.tsx";
-import { FiveDice } from "./Components/FiveDice.tsx";
+import { Table } from "./Components/Table.jsx";
+import { NavButton } from "./Components/NavButton.jsx";
+import { TwoDice } from "./Components/TwoDice.jsx";
+import { FiveDice } from "./Components/FiveDice.jsx";
 
 const views = ["table", "twoDice", "fiveDice"];
 

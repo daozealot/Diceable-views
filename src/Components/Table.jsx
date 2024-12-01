@@ -13,7 +13,7 @@ const chudovishta = [
   "Дракон",
 ];
 
-export const Table = ({ table: any, setTable }) => {
+export const Table = ({ table, setTable }) => {
   useEffect(() => {
     if (!table) {
       reset();

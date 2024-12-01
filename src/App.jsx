@@ -11,23 +11,23 @@ function App() {
   const [view, setView] = useState(views[0]);
   const [table, setTable] = useState(null);
 
-  const getView = () => {
-    switch (view) {
-      case "table":
-        return <Table table={table} setTable={setTable} />;
-      case "twoDice":
-        return <TwoDice setTable={setTable} />;
-      case "fiveDice":
-        return <FiveDice />;
-    }
-  };
-
   const onNavRight = () => {
     setView(views[views.findIndex((el) => el === view) + 1]);
   };
 
   const onNavLeft = () => {
     setView(views[views.findIndex((el) => el === view) - 1]);
+  };
+
+  const getView = () => {
+    switch (view) {
+      case "table":
+        return <Table table={table} setTable={setTable} />;
+      case "twoDice":
+        return <TwoDice setTable={setTable} goLeft={onNavLeft} />;
+      case "fiveDice":
+        return <FiveDice />;
+    }
   };
 
   return (

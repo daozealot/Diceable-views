@@ -19,6 +19,10 @@
   padding: 10px;
 }
 
+.margin-bottom {
+  margin-bottom: 100px;
+}
+
 .die-locked {
   background-color: pink;
   border-radius: 20%;

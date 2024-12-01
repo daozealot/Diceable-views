@@ -2,18 +2,20 @@ import { useState } from "react";
 import { getRandomInt, getRandomPermutation } from "./utils";
 import Die from "./die";
 
+const DEFAULT_STATE = {
+  die1: { roll: 1, isLocked: false },
+  die2: { roll: 1, isLocked: false },
+  die3: { roll: 1, isLocked: false },
+  die4: { roll: 1, isLocked: false },
+  die5: { roll: 1, isLocked: false },
+  times: 0,
+};
+
 export const FiveDice = () => {
-  const [roll, setRoll] = useState({
-    die1: { roll: 1, isLocked: false },
-    die2: { roll: 1, isLocked: false },
-    die3: { roll: 1, isLocked: false },
-    die4: { roll: 1, isLocked: false },
-    die5: { roll: 1, isLocked: false },
-    times: 0,
-  });
+  const [roll, setRoll] = useState(DEFAULT_STATE);
+
   const reset = () => {
-    setTable(() => getRandomPermutation());
-    goLeft();
+    setRoll(DEFAULT_STATE);
   };
 
   const getRoll = () => {
@@ -87,12 +89,16 @@ export const FiveDice = () => {
 
   return (
     <div className="two-dice-view">
-      {roll.times ? rollDices() : ""}
-      <h2 className="flex-items">Пъти хвърлени: {roll.times}</h2>
-
-      <button className="btn-reset" onClick={getRoll}>
+      <button className="btn-reset margin-bottom" onClick={getRoll}>
         Хвърли
       </button>
+      {roll.times ? rollDices() : ""}
+      <h2 className="flex-items">Пъти хвърлени: {roll.times}</h2>
+      {roll.times !== 0 && (
+        <button className="btn-reset" onClick={reset}>
+          Рестартирай
+        </button>
+      )}
     </div>
   );
 };

@@ -45,41 +45,71 @@ export const FiveDice = () => {
     setRoll(() => generateRoll);
   };
 
-  const setLockUnlock = (die) => {
-    console.log("LOCK", die);
-    die.isLocked = !die.isLocked;
-  };
-
   const rollDices = () => {
     return (
       <div className="flex-items display-flex-center">
         <div
           className={`padding ${roll.die1.isLocked ? "die-locked" : ""}`}
-          onClick={() => setLockUnlock(roll.die1)}
+          onClick={() =>
+            setRoll(() => ({
+              ...roll,
+              ...{
+                die1: { roll: roll.die1.roll, isLocked: !roll.die1.isLocked },
+              },
+            }))
+          }
         >
           <Die value={roll.die1.roll} />
         </div>
         <div
           className={`padding ${roll.die2.isLocked ? "die-locked" : ""}`}
-          onClick={() => setLockUnlock(roll.die2)}
+          onClick={() =>
+            setRoll(() => ({
+              ...roll,
+              ...{
+                die2: { roll: roll.die2.roll, isLocked: !roll.die2.isLocked },
+              },
+            }))
+          }
         >
           <Die value={roll.die2.roll} />
         </div>
         <div
           className={`padding ${roll.die3.isLocked ? "die-locked" : ""}`}
-          onClick={() => setLockUnlock(roll.die3)}
+          onClick={() =>
+            setRoll(() => ({
+              ...roll,
+              ...{
+                die3: { roll: roll.die3.roll, isLocked: !roll.die3.isLocked },
+              },
+            }))
+          }
         >
           <Die value={roll.die3.roll} />
         </div>
         <div
           className={`padding ${roll.die4.isLocked ? "die-locked" : ""}`}
-          onClick={() => setLockUnlock(roll.die4)}
+          onClick={() =>
+            setRoll(() => ({
+              ...roll,
+              ...{
+                die4: { roll: roll.die4.roll, isLocked: !roll.die4.isLocked },
+              },
+            }))
+          }
         >
           <Die value={roll.die4.roll} />
         </div>
         <div
           className={`padding ${roll.die5.isLocked ? "die-locked" : ""}`}
-          onClick={() => setLockUnlock(roll.die5)}
+          onClick={() =>
+            setRoll(() => ({
+              ...roll,
+              ...{
+                die5: { roll: roll.die5.roll, isLocked: !roll.die5.isLocked },
+              },
+            }))
+          }
         >
           <Die value={roll.die5.roll} />
         </div>
